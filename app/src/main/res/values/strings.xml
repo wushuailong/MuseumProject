@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MuseumProject</string>
+    <!--bottom-->
+    <string name="bottom_01">首页</string>
+    <string name="bottom_02">全部课程</string>
+    <string name="bottom_03">问答</string>
+    <string name="bottom_04">语音</string>
+    <string name="bottom_05">个人中心</string>
+</resources>
