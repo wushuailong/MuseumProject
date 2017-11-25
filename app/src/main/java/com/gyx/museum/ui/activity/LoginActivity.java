@@ -14,6 +14,9 @@ import com.gyx.museum.presenter.LoginPresenter;
 import com.gyx.museum.utils.CommonUtil;
 import com.orhanobut.logger.Logger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -54,8 +57,16 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     public void onClick() {
         mPresenter.onLogin();
         //ZxingActivityPermissionsDispatcher.startSpotWithCheck(this,ZxingActivity.STYLE_ALL);
-        Intent intent = new Intent(LoginActivity.this, CaptureActivity.class);
-        startActivityForResult(intent, REQUEST_CODE);
+      /*  Intent intent = new Intent(LoginActivity.this, CaptureActivity.class);
+        startActivityForResult(intent, REQUEST_CODE);*/
+        Intent intent = new Intent(this, PicActivity.class);
+        ArrayList<String> mListPicUrls = new ArrayList<>();
+        for (int i = 0; i < 4; i++) {
+            mListPicUrls.add("http://img5.imgtn.bdimg.com/it/u=49366202,632101467&fm=27&gp=0.jpg");
+        }
+        intent.putStringArrayListExtra("piclist", mListPicUrls);
+        intent.putExtra("position", 0);
+        startActivity(intent);
     }
     @Override
     public void showToast() {

@@ -6,4 +6,6 @@
     <string name="bottom_03">问答</string>
     <string name="bottom_04">语音</string>
     <string name="bottom_05">个人中心</string>
+
+    <string name="viewpager_indicator">%1$d/%2$d</string>
 </resources>
