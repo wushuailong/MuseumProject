@@ -46,27 +46,12 @@
                 android:textColor="@color/white"
                 />
         </RelativeLayout>
+
         <RelativeLayout
             style="@style/tab_item_background"
             >
             <RadioButton
                 android:id="@+id/tab03_lv"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:drawableTop="@mipmap/icon_contacts"
-                android:clickable="true"
-                android:text="@string/bottom_04"
-                android:textSize="@dimen/size_10"
-                android:button="@null"
-                android:layout_marginTop="@dimen/height_5"
-                android:textColor="@color/white"
-                />
-        </RelativeLayout>
-        <RelativeLayout
-            style="@style/tab_item_background"
-            >
-            <RadioButton
-                android:id="@+id/tab04_lv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:drawableTop="@mipmap/icon_contacts"
@@ -78,16 +63,17 @@
                 android:textColor="@color/white"
                 />
         </RelativeLayout>
+
         <RelativeLayout
             style="@style/tab_item_background"
             >
             <RadioButton
-                android:id="@+id/tab05_lv"
+                android:id="@+id/tab04_lv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:drawableTop="@mipmap/icon_contacts"
                 android:clickable="true"
-                android:text="@string/bottom_05"
+                android:text="@string/bottom_04"
                 android:textSize="@dimen/size_10"
                 android:button="@null"
                 android:layout_marginTop="@dimen/height_5"
@@ -95,134 +81,5 @@
                 />
         </RelativeLayout>
     </RadioGroup>
-    <!--<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/blue"
-        android:gravity="center_vertical"
-        android:layout_gravity="center_vertical"
-        android:orientation="horizontal">
-        <LinearLayout
-            android:id="@+id/tab01_lv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/icon_contacts"
-                />
-            <TextView
-                android:id="@+id/tab01_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/bottom_01"
-                android:textSize="@dimen/size_10"
-                android:textColor="@color/white"
-                android:layout_marginTop="@dimen/height_5"
-
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/tab02_lv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/icon_contacts"
-                />
-            <TextView
-                android:id="@+id/tab02_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/bottom_02"
-                android:textSize="@dimen/size_10"
-                android:textColor="@color/white"
-                android:layout_marginTop="@dimen/height_5"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/tab03_lv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/icon_contacts"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/tab04_lv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/icon_contacts"
-                />
-            <TextView
-                android:id="@+id/tab04_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/bottom_04"
-                android:textSize="@dimen/size_10"
-                android:textColor="@color/white"
-                android:layout_marginTop="@dimen/height_5"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/tab05_lv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/icon_contacts"
-                />
-            <TextView
-                android:id="@+id/tab05_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/bottom_05"
-                android:textSize="@dimen/size_10"
-                android:textColor="@color/white"
-                android:layout_marginTop="@dimen/height_5"
-                />
-        </LinearLayout>
-
-    </LinearLayout>-->
 
 </LinearLayout>

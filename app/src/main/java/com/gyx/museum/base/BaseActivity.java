@@ -1,5 +1,6 @@
 package com.gyx.museum.base;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -34,6 +35,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     public LoadStateManager mLoadStateManager;
     protected T  mPresenter;
     Unbinder unbinder;
+    public Context mContext;
     /**
      * 绑定布局文件
      *
@@ -61,6 +63,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         setContentView(attachLayoutRes());
         getAppInstance().addActivity(this);
         ButterKnife.bind(this);
+        mContext = this;
         if (null != onCreatePresenter()) {
             mPresenter = onCreatePresenter();
         }

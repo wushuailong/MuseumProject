@@ -11,6 +11,10 @@ import com.gyx.museum.config.SharedConstants;
 import com.gyx.museum.utils.DateUtil;
 import com.gyx.museum.utils.SharedPrefUtil;
 import com.gyx.museum.widget.FontsOverride;
+import com.umeng.socialize.Config;
+import com.umeng.socialize.PlatformConfig;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.common.QueuedWork;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -37,11 +41,23 @@ public class BaseApplication extends MultiDexApplication implements
         mApplication = this;
         mSharedPrefUtil = new SharedPrefUtil(this, SharedConstants.sharersinfor);
         FontsOverride.setDefaultFont(this, "SERIF", "fonts/PingFang Bold.ttf");
+        //友盟
+        Config.DEBUG = true;
+        QueuedWork.isUseThreadPool = false;
+        UMShareAPI.get(this);
+        getUmConfig();
         //启动异常捕获线程
         defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler(this);
-    }
 
+
+
+    }
+    public void getUmConfig(){
+        PlatformConfig.setWeixin("111111","11111");
+        PlatformConfig.setQQZone("111111","1111");
+        PlatformConfig.setSinaWeibo("111111","1111","");
+    }
     public static BaseApplication getInstance() {
         return mApplication;
     }

@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ import com.gyx.museum.base.BaseStateManager;
  * Created by Administrator on 2017\8\7 0007.
  */
 
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     @Nullable
     @BindView(R.id.multiStateView)
     public MultiStateView multiStateView;
@@ -39,6 +40,7 @@ public abstract class BaseFragment extends Fragment {
     public LoadStateManager mLoadStateManager;
     private boolean mIsMulti = false;
     Unbinder unbinder;
+    protected T  mPresenter;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +53,9 @@ public abstract class BaseFragment extends Fragment {
         if (mRootView == null) {
             mRootView = inflater.inflate(attachLayoutRes(), null);
             unbinder = ButterKnife.bind(this, mRootView);
+            if (null != onCreatePresenter()) {
+                mPresenter = onCreatePresenter();
+            }
             initToolBar();
             initViews();
             if(multiStateView != null) {
@@ -117,11 +122,6 @@ public abstract class BaseFragment extends Fragment {
             }
         });
     }
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-       // unbinder.unbind();
-    }
     /**
      * 绑定布局文件
      * @return  布局文件ID
@@ -136,7 +136,7 @@ public abstract class BaseFragment extends Fragment {
      * 更新视图控件
      */
     protected abstract void updateViews();
-
+    protected abstract T onCreatePresenter();
 
     protected void initToolBar(){
         toolbar = (Toolbar)mRootView.findViewById(R.id.toolbar);
@@ -155,5 +155,15 @@ public abstract class BaseFragment extends Fragment {
             titleName.setText(title);
         }
     }
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (null != mPresenter) {
+            mPresenter.detachView();
+        }
+        if (unbinder != null) {
+            unbinder.unbind();
+            Log.e("111", "Actiyity_unbinder --->执行了");
+        }
+    }
 }
