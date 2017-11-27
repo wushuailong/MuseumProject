@@ -59,7 +59,7 @@
         <activity android:name=".ui.activity.ZxingActivity"></activity>
         <activity android:name="com.google.zxing.activity.CaptureActivity"></activity>
         <activity android:name=".ui.activity.PicActivity"></activity>
-
+        <activity android:name=".ui.activity.MuseumClassifyActivity"></activity>
 
         <!--友盟-->
         <meta-data

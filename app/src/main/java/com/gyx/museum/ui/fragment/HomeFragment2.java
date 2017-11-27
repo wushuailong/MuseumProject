@@ -1,5 +1,6 @@
 package com.gyx.museum.ui.fragment;
 
+import android.graphics.Color;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.GridLayoutManager;
@@ -38,6 +39,7 @@ public class HomeFragment2 extends BaseFragment implements BaseQuickAdapter.Requ
     RecyclerView activeRlv;
     HomeMenuAdapter homeMenuAdapter;
     HomeActiveAdapter homeActiveAdapter;
+    private double mDistanceY;
     @Override
     protected int attachLayoutRes() {
         return R.layout.fragment_home2;
@@ -53,6 +55,28 @@ public class HomeFragment2 extends BaseFragment implements BaseQuickAdapter.Requ
         homeActiveAdapter.openLoadMore(5,true);
         homeActiveAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         addHeaderView();
+        activeRlv.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                //滑动的距离
+                mDistanceY += dy;
+                //toolbar的高度
+                int toolbarHeight = toolbar.getBottom();
+
+                //当滑动的距离 <= toolbar高度的时候，改变Toolbar背景色的透明度，达到渐变的效果
+                if (mDistanceY <= toolbarHeight) {
+                    float scale = (float) mDistanceY / toolbarHeight;
+                    float alpha = scale * 255;
+                    toolbar.setBackgroundColor(Color.argb((int) alpha, 128, 0, 0));
+                } else {
+                    //上述虽然判断了滑动距离与toolbar高度相等的情况，但是实际测试时发现，标题栏的背景色
+                    //很少能达到完全不透明的情况，所以这里又判断了滑动距离大于toolbar高度的情况，
+                    //将标题栏的颜色设置为完全不透明状态
+                    toolbar.setBackgroundResource(R.color.colorPrimary);
+                }
+
+            }
+        });
     }
 
     @Override
@@ -140,4 +164,5 @@ public class HomeFragment2 extends BaseFragment implements BaseQuickAdapter.Requ
         handler.post(r);
 
     }
+
 }
