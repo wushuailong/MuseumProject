@@ -14,5 +14,6 @@
         android:id="@+id/classify_item_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="美女"
         android:gravity="center"/>
 </LinearLayout>

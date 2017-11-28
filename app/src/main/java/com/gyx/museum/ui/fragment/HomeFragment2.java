@@ -1,5 +1,6 @@
 package com.gyx.museum.ui.fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
@@ -19,7 +20,9 @@ import com.gyx.museum.base.BaseFragment;
 import com.gyx.museum.base.BasePresenter;
 import com.gyx.museum.model.HomeMenu;
 import com.gyx.museum.model.LoopImage;
+import com.gyx.museum.ui.activity.MuseumClassifyActivity;
 import com.gyx.museum.utils.CommonUtil;
+import com.gyx.museum.utils.DensityUtil;
 import com.jude.rollviewpager.OnItemClickListener;
 import com.jude.rollviewpager.RollPagerView;
 
@@ -39,7 +42,8 @@ public class HomeFragment2 extends BaseFragment implements BaseQuickAdapter.Requ
     RecyclerView activeRlv;
     HomeMenuAdapter homeMenuAdapter;
     HomeActiveAdapter homeActiveAdapter;
-    private double mDistanceY;
+    int mDistance = 0;
+    int maxDistance = 255;//当距离在[0,255]变化时，透明度在[0,255之间变化]
     @Override
     protected int attachLayoutRes() {
         return R.layout.fragment_home2;
@@ -47,6 +51,7 @@ public class HomeFragment2 extends BaseFragment implements BaseQuickAdapter.Requ
 
     @Override
     protected void initViews() {
+        initTitle(true,"首页");
         activeRlv.setNestedScrollingEnabled(false);
         activeRlv.setLayoutManager(new LinearLayoutManager(mContext));
         homeActiveAdapter = new HomeActiveAdapter(getMenuActive());
@@ -58,27 +63,28 @@ public class HomeFragment2 extends BaseFragment implements BaseQuickAdapter.Requ
         activeRlv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                //滑动的距离
-                mDistanceY += dy;
-                //toolbar的高度
-                int toolbarHeight = toolbar.getBottom();
-
-                //当滑动的距离 <= toolbar高度的时候，改变Toolbar背景色的透明度，达到渐变的效果
-                if (mDistanceY <= toolbarHeight) {
-                    float scale = (float) mDistanceY / toolbarHeight;
-                    float alpha = scale * 255;
-                    toolbar.setBackgroundColor(Color.argb((int) alpha, 128, 0, 0));
-                } else {
-                    //上述虽然判断了滑动距离与toolbar高度相等的情况，但是实际测试时发现，标题栏的背景色
-                    //很少能达到完全不透明的情况，所以这里又判断了滑动距离大于toolbar高度的情况，
-                    //将标题栏的颜色设置为完全不透明状态
-                    toolbar.setBackgroundResource(R.color.colorPrimary);
-                }
-
+                mDistance += dy;
+                float percent = mDistance * 1f / maxDistance;//百分比
+                int alpha = (int) (percent * 255);
+                int argb = Color.argb(alpha, 57, 174, 255);
+                setSystemBarAlpha(alpha);
             }
         });
     }
-
+    /**
+     * 设置标题栏背景透明度
+     * @param alpha 透明度
+     */
+    private void setSystemBarAlpha(int alpha) {
+        if (alpha >= 125) {
+            alpha = 125;
+        } else {
+            //标题栏渐变。a:alpha透明度 r:红 g：绿 b蓝
+//        titlebar.setBackgroundColor(Color.rgb(57, 174, 255));//没有透明效果
+//        titlebar.setBackgroundColor(Color.argb(alpha, 57, 174, 255));//透明效果是由参数1决定的，透明范围[0,255]
+            toolbar.getBackground().setAlpha(alpha);
+        }
+    }
     @Override
     protected void updateViews() {
 
@@ -109,7 +115,8 @@ public class HomeFragment2 extends BaseFragment implements BaseQuickAdapter.Requ
                 if(i == 0){
                     CommonUtil.showToast(mContext,"博物馆");
                 }else if(i == 1){
-                    CommonUtil.showToast(mContext,"馆藏");
+                   // CommonUtil.showToast(mContext,"馆藏");
+                    startActivity(new Intent(mContext, MuseumClassifyActivity.class));
                 }else if(i == 2){
                     CommonUtil.showToast(mContext,"展览");
                 }else if(i == 3){
