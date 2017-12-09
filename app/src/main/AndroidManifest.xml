@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gyx.museum">
 
+
     <!--用于进行网络定位-->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
     <!--用于访问GPS定位-->
@@ -42,6 +43,7 @@
     <uses-permission android:name="android.permission.RECORD_VIDEO"/>
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -50,17 +52,49 @@
         android:name=".base.BaseApplication"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.MainActivity">
+        </activity>
+        <activity android:name=".ui.activity.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreen_Welcome"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--图像识别-->
+        <activity
+            android:name="com.opencv.wsl.ImgRecognitionActivity"
+            android:screenOrientation="landscape"></activity>
+
+        <activity android:name=".ui.activity.ModelWebActivity"></activity>
+
+        <activity android:name=".ui.activity.LoginActivity"></activity>
+        <activity android:name=".ui.activity.LoginActivity2"></activity>
+        <activity android:name=".ui.activity.RegisterActivity"></activity>
+        <activity android:name=".ui.activity.ForgetPassActivity"></activity>
         <activity android:name=".ui.activity.ZxingActivity"></activity>
         <activity android:name="com.google.zxing.activity.CaptureActivity"></activity>
         <activity android:name=".ui.activity.PicActivity"></activity>
         <activity android:name=".ui.activity.MuseumClassifyActivity"></activity>
-
+        <activity android:name=".ui.activity.ImagePagerActivity"></activity>
+        <activity android:name=".ui.activity.GcDetailsActivity"></activity>
+        <activity android:name=".ui.activity.BwgIntroduceActivity"></activity>
+        <activity android:name=".ui.activity.VisitInfoActivity"></activity>
+        <activity android:name=".ui.activity.BwgViewpagerActivity"></activity>
+        <activity android:name=".ui.activity.BwgExhibition"></activity>
+        <activity android:name=".ui.activity.GcListActivity"></activity>
+        <activity android:name=".ui.activity.HdListActivity"></activity>
+        <activity android:name=".ui.activity.ZldetailsActivity"></activity>
+        <activity android:name=".ui.activity.MxWenwuActivity"></activity>
+        <activity android:name=".ui.activity.MyCollectActivity"></activity>
+        <activity android:name=".ui.activity.MySysSetActivity"></activity>
+        <activity android:name=".ui.activity.MyBindPhoneActivity"></activity>
+        <activity android:name=".ui.activity.MyUpdatePassActivity"></activity>
+        <activity android:name=".ui.activity.TyhdArActivity"></activity>
+        <activity android:name=".ui.activity.GcDetailsPagerActivity"></activity>
+        <service android:name=".service.DataService" />
         <!--友盟-->
         <meta-data
             android:name="UMENG_APPKEY"

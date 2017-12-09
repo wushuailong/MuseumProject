@@ -15,6 +15,7 @@ public class LoopImage {
     private int id;
     private String photouuid;
     private String path;
+    private int res;
 
     public int getId() {
         return id;
@@ -38,5 +39,13 @@ public class LoopImage {
 
     public void setPath(String path) {
         this.path = path;
+    }
+
+    public int getRes() {
+        return res;
+    }
+
+    public void setRes(int res) {
+        this.res = res;
     }
 }

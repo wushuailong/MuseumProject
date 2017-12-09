@@ -67,6 +67,8 @@ public class MainActivity extends BaseActivity {
         // 设置内容区域
         switch (i) {
             case 0:
+                tab01Lv.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.home_icon_true, 0, 0);
+                tab01Lv.setTextColor(getResources().getColor(R.color.home_color_bg));
                 if (homePageFragment == null) {
                     homePageFragment = new HomeFragment2();
                     transaction.add(R.id.id_content, homePageFragment);
@@ -75,6 +77,8 @@ public class MainActivity extends BaseActivity {
                 }
                 break;
             case 1:
+                tab02Lv.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.zhdl_icon_true, 0, 0);
+                tab02Lv.setTextColor(getResources().getColor(R.color.home_color_bg));
                 if (wisdomGuideFragment == null) {
                     wisdomGuideFragment = new WisdomGuideFragment();
                     transaction.add(R.id.id_content, wisdomGuideFragment);
@@ -83,6 +87,8 @@ public class MainActivity extends BaseActivity {
                 }
                 break;
             case 2:
+                tab03Lv.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.tyhd_icon_true, 0, 0);
+                tab03Lv.setTextColor(getResources().getColor(R.color.home_color_bg));
                 if (expInteractionFragment == null) {
                     expInteractionFragment = new ExpInteractionFragment();
                     transaction.add(R.id.id_content, expInteractionFragment);
@@ -91,6 +97,8 @@ public class MainActivity extends BaseActivity {
                 }
                 break;
             case 3:
+                tab04Lv.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.mine_icon_true, 0, 0);
+                tab04Lv.setTextColor(getResources().getColor(R.color.home_color_bg));
                 if (mineFragment == null) {
                     mineFragment = new MineFragment();
                     transaction.add(R.id.id_content, mineFragment);
@@ -125,9 +133,14 @@ public class MainActivity extends BaseActivity {
      * 切换图片至暗色
      */
     public void resetImgs() {
-        //今天天气不错辅导费热熔
-        //id_scenicpot_rdo.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.icon_main, 0, 0);
-        // id_mine_rdo.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.icon_foot, 0, 0);
+        tab01Lv.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.home_icon, 0, 0);
+        tab02Lv.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.zhdl_icon, 0, 0);
+        tab03Lv.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.tyhd_icon, 0, 0);
+        tab04Lv.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.mine_icon, 0, 0);
+        tab01Lv.setTextColor(getResources().getColor(R.color.home_color));
+        tab02Lv.setTextColor(getResources().getColor(R.color.home_color));
+        tab03Lv.setTextColor(getResources().getColor(R.color.home_color));
+        tab04Lv.setTextColor(getResources().getColor(R.color.home_color));
     }
 
     @OnClick({R.id.tab01_lv, R.id.tab02_lv, R.id.tab03_lv, R.id.tab04_lv})

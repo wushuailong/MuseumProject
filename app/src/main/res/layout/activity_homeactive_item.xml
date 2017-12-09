@@ -1,24 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center">
-    <TextView
-        android:id="@+id/title_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="纸的魅力所在"
+    android:gravity="center"
+    android:layout_marginBottom="@dimen/height_5"
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_190"
+        android:src="@mipmap/home_image01"
+        android:scaleType="fitXY"
         />
-    <TextView
-        android:id="@+id/time_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2017-2"
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_190"
+        android:background="@color/black_alph"
         />
-    <Button
-        android:id="@+id/active_btn"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="点击"
-        />
-</LinearLayout>
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="纸的魅力--传统手工造纸体验之旅"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/size_18"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="活动时间：2017-11-25 09:00--2017-12-01 15:00"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/height_14"
+            android:textSize="@dimen/size_14"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="活动未开始"
+            android:background="@drawable/home_bg"
+            android:paddingTop="@dimen/height_8"
+            android:paddingBottom="@dimen/height_8"
+            android:paddingLeft="@dimen/height_20"
+            android:paddingRight="@dimen/height_20"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/height_35"
+            android:textSize="@dimen/size_12"
+            />
+    </LinearLayout>
+
+</FrameLayout>

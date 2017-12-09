@@ -3,20 +3,97 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    >
     <com.jude.rollviewpager.RollPagerView
         android:id="@+id/rollpager"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="@dimen/height_200"
+
         app:rollviewpager_play_delay="3000"/>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/menu_rlv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/height_10"
-        android:layout_marginBottom="@dimen/height_10"
-
+        android:layout_marginTop="@dimen/height_16"
+        android:layout_marginBottom="@dimen/height_16"
         >
-
     </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/white"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_48"
+            android:text="@string/home_pmd"
+            android:drawableLeft="@mipmap/home_img_left"
+            android:drawableRight="@mipmap/home_img_right"
+            android:drawablePadding="@dimen/height_10"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/home_color"
+            android:textSize="@dimen/size_18"
+            android:gravity="center_vertical"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_60"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/height_8"
+        android:paddingRight="@dimen/height_8"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/height_8"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/home_lb_icon"
+            />
+        <com.sunfusheng.marqueeview.MarqueeView
+            android:id="@+id/marqueeView"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/height_12"
+            app:mvAnimDuration="1000"
+            app:mvDirection="bottom_to_top"
+            app:mvInterval="3000"
+            app:mvTextColor="@color/home_gray"
+            app:mvTextSize="14sp"
+            app:mvSingleLine="true"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/arr_right"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/white"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_48"
+            android:text="@string/home_zxhd"
+            android:drawableLeft="@mipmap/home_img_left"
+            android:drawableRight="@mipmap/home_img_right"
+            android:drawablePadding="@dimen/height_10"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/home_color"
+            android:textSize="@dimen/size_18"
+            android:gravity="center_vertical"
+            />
+    </LinearLayout>
 </LinearLayout>

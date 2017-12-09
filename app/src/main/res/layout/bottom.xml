@@ -8,9 +8,9 @@
     <RadioGroup
         android:id="@+id/main_radiogroup"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_50"
+        android:layout_height="@dimen/height_48"
         android:orientation="horizontal"
-        android:background="@color/blue"
+        android:background="@color/white"
         android:gravity="center_vertical"
         >
         <RelativeLayout
@@ -19,14 +19,14 @@
             <RadioButton
                 android:id="@+id/tab01_lv"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:drawableTop="@mipmap/icon_contacts"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/home_icon"
                 android:clickable="true"
                 android:text="@string/bottom_01"
-                android:textSize="@dimen/size_10"
+                android:textSize="@dimen/size_12"
                 android:button="@null"
-                android:layout_marginTop="@dimen/height_5"
-                android:textColor="@color/white"
+                android:drawablePadding="@dimen/height_5"
+                android:textColor="@color/home_color"
                 />
         </RelativeLayout>
 
@@ -36,14 +36,14 @@
             <RadioButton
                 android:id="@+id/tab02_lv"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:drawableTop="@mipmap/icon_contacts"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/zhdl_icon"
                 android:clickable="true"
                 android:text="@string/bottom_02"
-                android:textSize="@dimen/size_10"
+                android:textSize="@dimen/size_12"
                 android:button="@null"
-                android:layout_marginTop="@dimen/height_5"
-                android:textColor="@color/white"
+                android:drawablePadding="@dimen/height_5"
+                android:textColor="@color/home_color"
                 />
         </RelativeLayout>
 
@@ -53,14 +53,14 @@
             <RadioButton
                 android:id="@+id/tab03_lv"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:drawableTop="@mipmap/icon_contacts"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/tyhd_icon"
                 android:clickable="true"
                 android:text="@string/bottom_03"
-                android:textSize="@dimen/size_10"
+                android:textSize="@dimen/size_12"
                 android:button="@null"
-                android:layout_marginTop="@dimen/height_5"
-                android:textColor="@color/white"
+                android:drawablePadding="@dimen/height_5"
+                android:textColor="@color/home_color"
                 />
         </RelativeLayout>
 
@@ -70,14 +70,14 @@
             <RadioButton
                 android:id="@+id/tab04_lv"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:drawableTop="@mipmap/icon_contacts"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/mine_icon"
                 android:clickable="true"
                 android:text="@string/bottom_04"
-                android:textSize="@dimen/size_10"
+                android:textSize="@dimen/size_12"
                 android:button="@null"
-                android:layout_marginTop="@dimen/height_5"
-                android:textColor="@color/white"
+                android:drawablePadding="@dimen/height_5"
+                android:textColor="@color/home_color"
                 />
         </RelativeLayout>
     </RadioGroup>

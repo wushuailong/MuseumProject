@@ -17,6 +17,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SurfaceHolder;
@@ -124,6 +125,7 @@ public class CaptureActivity extends AppCompatActivity implements Callback {
                     if (cursor.moveToFirst()) {
                         photo_path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
                     }
+                    Log.i("photo_path",photo_path+"******");
                     cursor.close();
 
                     mProgress = new ProgressDialog(CaptureActivity.this);

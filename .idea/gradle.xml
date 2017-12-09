@@ -9,6 +9,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/circleindicator" />
+            <option value="$PROJECT_DIR$/ijkplayerlibrary" />
+            <option value="$PROJECT_DIR$/openCVLibrary330" />
+            <option value="$PROJECT_DIR$/superplayerlibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

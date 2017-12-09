@@ -11,6 +11,9 @@ import com.gyx.museum.config.SharedConstants;
 import com.gyx.museum.utils.DateUtil;
 import com.gyx.museum.utils.SharedPrefUtil;
 import com.gyx.museum.widget.FontsOverride;
+import com.iflytek.cloud.SpeechUtility;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.umeng.socialize.Config;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
@@ -40,17 +43,26 @@ public class BaseApplication extends MultiDexApplication implements
         super.onCreate();
         mApplication = this;
         mSharedPrefUtil = new SharedPrefUtil(this, SharedConstants.sharersinfor);
-        FontsOverride.setDefaultFont(this, "SERIF", "fonts/PingFang Bold.ttf");
+        FontsOverride.setDefaultFont(this, "SERIF", "fonts/hanziti.ttf");
         //友盟
         Config.DEBUG = true;
         QueuedWork.isUseThreadPool = false;
         UMShareAPI.get(this);
         getUmConfig();
+        //图片
+        initImageLoader();
+        //讯飞
+        SpeechUtility.createUtility(getApplicationContext(), "appid=5a1e238e");
         //启动异常捕获线程
         defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler(this);
 
 
+
+    }
+    private void initImageLoader() {
+        ImageLoaderConfiguration configuration = ImageLoaderConfiguration.createDefault(this);
+        ImageLoader.getInstance().init(configuration);
 
     }
     public void getUmConfig(){

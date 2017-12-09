@@ -118,7 +118,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
      * @param title
      */
     protected void initTitle( boolean homeAsUpEnabled, String title) {
-        getSupportActionBar().setHomeAsUpIndicator(R.mipmap.icon_arr_left);
+        getSupportActionBar().setHomeAsUpIndicator(R.mipmap.fanhui_icon);
         getSupportActionBar().setDisplayHomeAsUpEnabled(homeAsUpEnabled);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         if(!TextUtils.isEmpty(title)) {
@@ -127,7 +127,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     }
     protected  void initTitle(Toolbar toolbar2, boolean homeAsUpEnabled){
         setSupportActionBar(toolbar2);
-        getSupportActionBar().setHomeAsUpIndicator(R.mipmap.icon_arr_left);
+        getSupportActionBar().setHomeAsUpIndicator(R.mipmap.fanhui_icon);
         getSupportActionBar().setDisplayHomeAsUpEnabled(homeAsUpEnabled);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 

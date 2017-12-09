@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    >
+    <include layout="@layout/toolbar"/>
+    <LinearLayout
+        android:id="@+id/my_bind_lv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_55"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/height_5"
+        android:paddingLeft="@dimen/height_8"
+        android:paddingRight="@dimen/height_8"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/my_08"
+            android:drawableLeft="@mipmap/my_bind_icon"
+            android:drawableRight="@mipmap/my_icon_right"
+            android:textColor="@color/home_color"
+            android:layout_gravity="center_vertical"
+            android:drawablePadding="@dimen/height_10"
+            android:textSize="@dimen/size_16"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_0.5"
+        android:background="@color/my_line"
+        />
+    <LinearLayout
+        android:id="@+id/my_update_lv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_55"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/height_5"
+        android:paddingLeft="@dimen/height_8"
+        android:paddingRight="@dimen/height_8"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/my_09"
+            android:drawableLeft="@mipmap/my_update_icon"
+            android:drawableRight="@mipmap/my_icon_right"
+            android:textColor="@color/home_color"
+            android:layout_gravity="center_vertical"
+            android:drawablePadding="@dimen/height_10"
+            android:textSize="@dimen/size_16"
+            />
+    </LinearLayout>
+</LinearLayout>

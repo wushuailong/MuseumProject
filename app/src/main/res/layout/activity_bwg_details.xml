@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:textColor="@color/white"
+       android:paddingLeft="@dimen/height_15"
+       android:paddingRight="@dimen/height_15"
+       android:layout_marginTop="@dimen/height_100"
+       android:lineSpacingMultiplier="1.3"
+       android:textSize="@dimen/size_16"
+       android:text=" 太原市博物馆位于山西省太原市长风文化商务区中央文化岛上，是文化岛大平广场上的标志性建筑之一，前拥汾河，后依内河，北邻山西大剧院，东邻山西省科技馆。总建筑面积11660平方米，其中博物馆主体建筑面积52740平方米，平台建筑面积11660平方米，组成部分有文物保护区、展陈区、学术研究区、公共活动和休闲服务区等。将以展示太原历史、揭示晋阳文化内涵为主体，以太原历史脉络为主线，突出以“晋阳崛起”和“走向盛唐”为重点进行展陈，使之成为展示太原历史、文化、艺术等内容的综合性博物馆和高雅的文化艺术殿堂。"
+       />
+
+</FrameLayout>

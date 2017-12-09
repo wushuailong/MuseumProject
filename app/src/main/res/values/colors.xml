@@ -14,4 +14,19 @@
     <color name="laser_color">#0F0</color>
     <color name="corner_color">#00FF00</color>
     <!-- QRCode scanner color end -->
+    <color name="black">#000000</color>
+    <color name="home_color">#3a3a3a</color>
+    <color name="home_bg">#f9f9f9</color>
+    <color name="home_color_bg">#f15a24</color>
+    <color name="home_gray">#8a8a8a</color>
+    <color name="yellow">#cbb047</color>
+    <color name="black_alph">#80000000</color>
+    <color name="black_bwg_alph">#99000000</color>
+    <color name="login_text">#262626</color>
+    <color name="login_gray">#81827d</color>
+    <color name="transparent">#00000000</color>
+    <color name="bwg_trans">#D9000000</color>
+    <color name="zl_trans">#B3000000</color>
+    <color name="mx_blue">#061f3e</color>
+    <color name="my_line">#a0a0a0</color>
 </resources>

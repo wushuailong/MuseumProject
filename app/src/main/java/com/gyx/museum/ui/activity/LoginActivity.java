@@ -55,18 +55,18 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @OnClick(R.id.login_btn)
     public void onClick() {
-        mPresenter.onLogin();
+       // mPresenter.onLogin();
         //ZxingActivityPermissionsDispatcher.startSpotWithCheck(this,ZxingActivity.STYLE_ALL);
-      /*  Intent intent = new Intent(LoginActivity.this, CaptureActivity.class);
-        startActivityForResult(intent, REQUEST_CODE);*/
-        Intent intent = new Intent(this, PicActivity.class);
+        Intent intent = new Intent(LoginActivity.this, CaptureActivity.class);
+        startActivityForResult(intent, REQUEST_CODE);
+       /* Intent intent = new Intent(this, PicActivity.class);
         ArrayList<String> mListPicUrls = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             mListPicUrls.add("http://img5.imgtn.bdimg.com/it/u=49366202,632101467&fm=27&gp=0.jpg");
         }
         intent.putStringArrayListExtra("piclist", mListPicUrls);
         intent.putExtra("position", 0);
-        startActivity(intent);
+        startActivity(intent);*/
     }
     @Override
     public void showToast() {

@@ -32,8 +32,9 @@ public class MyPagerAdapter extends StaticPagerAdapter {
         ImageView imageView = new ImageView(container.getContext());
        // imageView.setImageResource(image[position]);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        imageView.setImageResource(loopImage.getRes());
        // imageView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        ImageManager.getInstance().loadImage(context,loopImage.getPath(),imageView);
+        //ImageManager.getInstance().loadImage(context,loopImage.getPath(),imageView);
         return imageView;
     }
 

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:indicator="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_48"
+        android:orientation="horizontal"
+        android:background="@color/home_color"
+        android:gravity="center_vertical"
+        >
+        <ImageView
+            android:id="@+id/close_img"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:src="@mipmap/close_icon"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/height_14"
+            />
+    </RelativeLayout>
+
+
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             >
+             <com.gyx.museum.img_browse.HackyViewPager
+                 android:id="@+id/pager"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:background="@mipmap/gc_xq_bg"/>
+             <com.gyx.museum.widget.Xcircleindicator
+                 android:id="@+id/Xcircleindicator"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:layout_centerHorizontal="true"
+                 android:layout_marginBottom="@dimen/height_48"
+                 indicator:circleInterval="10dp"
+                 indicator:fillColor="@color/home_color"
+                 indicator:radius="3dp"
+                 indicator:strokeColor="#424141" />
+         </RelativeLayout>
+
+   
+
+</LinearLayout>
